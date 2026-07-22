@@ -10,14 +10,14 @@ export function TechStack() {
   const filteredTech = techStack.filter((tech) => tech.category === activeCategory);
 
   return (
-    <section id="tech-stack" className="w-full py-16 px-6 md:px-12 bg-[#F7F3EC] relative z-20">
+    <section id="tech-stack" className="w-full pt-16 px-6 md:px-12 bg-[#F7F3EC] relative z-20 mb-13">
       <div className="max-w-7xl mx-auto">
         {/* Section Header with Heading and Tabs */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-[#EBE6DD] pb-8">
           <div>
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#FF581A]">
-              My Tech Stack
-            </span>
+            <h2 className="font-syne font-black text-sm uppercase tracking-widest text-[#FF581A]">
+              MY TECH STACK
+            </h2>
           </div>
           <div>
             <TechTabs
@@ -29,7 +29,7 @@ export function TechStack() {
         </div>
 
         {/* Technology Cards Grid */}
-        <div className="min-h-[280px]">
+        <div className="min-h-[20px]">
           <motion.div
             layout
             className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4 sm:gap-5"

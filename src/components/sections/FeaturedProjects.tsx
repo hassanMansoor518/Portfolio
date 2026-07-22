@@ -15,7 +15,7 @@ export function FeaturedProjects() {
   });
 
   return (
-    <section id="featured-projects" className="w-full py-16 px-6 md:px-12 bg-[#F7F3EC] relative z-20 border-t border-[#EBE6DD]">
+    <section id="projects" className="w-full py-16 px-6 md:px-12 bg-[#F7F3EC] relative z-20 border-t border-[#EBE6DD]">
       <div className="max-w-7xl mx-auto">
         {/* Header container */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">

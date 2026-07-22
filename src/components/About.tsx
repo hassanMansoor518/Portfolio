@@ -49,9 +49,9 @@ function About() {
     }, []);
 
     return (
-        < div className="w-full bg-[#111111] text-[#F7F3EC] z-30 relative" >
+        <div id="about" className="w-full bg-[#111111] text-[#F7F3EC] z-30 relative">
 
-            < div className="w-full overflow-hidden leading-none" >
+            <div className="w-full overflow-hidden leading-none">
                 <svg
                     viewBox="0 0 1440 90"
                     xmlns="http://www.w3.org/2000/svg"

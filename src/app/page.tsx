@@ -7,6 +7,8 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 import About from "@/components/About";
 import { TechStack } from "@/components/sections/TechStack";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   // Initialize Lenis smooth scroll
@@ -21,6 +23,8 @@ export default function Home() {
       <About />
       <TechStack />
       <FeaturedProjects />
+      <Contact />
+      <Footer />
     </main>
   );
 }

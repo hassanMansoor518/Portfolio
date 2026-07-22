@@ -34,12 +34,11 @@ export function Navbar() {
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "py-3 bg-[#F7F3EC]/80 backdrop-blur-md border-b border-[#111111]/5 shadow-sm"
-          : "py-6 bg-transparent"
-      }`}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+        ? "py-3 bg-[#F7F3EC]/80 backdrop-blur-md border-b border-[#111111]/5 shadow-sm"
+        : "py-6 bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo */}
@@ -66,9 +65,8 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setActiveTab(link.name)}
-                className={`relative px-5 py-2 text-xs font-semibold uppercase tracking-widest transition-colors duration-300 rounded-full ${
-                  isActive ? "text-[#F7F3EC]" : "text-[#111111]/70 hover:text-[#111111]"
-                }`}
+                className={`relative px-5 py-2 text-xs font-semibold uppercase tracking-widest transition-colors duration-300 rounded-full ${isActive ? "text-[#F7F3EC]" : "text-[#111111]/70 hover:text-[#111111]"
+                  }`}
               >
                 {isActive && (
                   <motion.div

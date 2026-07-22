@@ -17,18 +17,19 @@ export function ProjectFilters({ categories, activeCategory, onCategoryChange }:
           <button
             key={category}
             onClick={() => onCategoryChange(category)}
-            className="relative px-4 py-2 text-xs font-semibold rounded-full transition-colors duration-200 cursor-pointer focus:outline-none"
+            className="relative px-4 py-2 text-xs font-semibold rounded-full transition-colors duration-300 cursor-pointer focus:outline-none select-none overflow-hidden"
             style={{
               color: isActive ? "#FFFFFF" : "#555555",
-              backgroundColor: isActive ? "#FF581A" : "#ECE9E2",
+              backgroundColor: isActive ? "transparent" : "#ECE9E2",
             }}
           >
             {/* Animated pill background container using layoutId */}
             {isActive && (
               <motion.div
                 layoutId="activeProjectPill"
-                className="absolute inset-0 bg-[#FF581A] rounded-full -z-10"
-                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                className="absolute inset-0 bg-[#FF581A]"
+                style={{ zIndex: 0 }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
               />
             )}
             <span className="relative z-10">{category}</span>

@@ -17,19 +17,20 @@ export function TechTabs({ categories, activeCategory, onCategoryChange }: TechT
           <button
             key={category}
             onClick={() => onCategoryChange(category)}
-            className="relative px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-full border transition-colors duration-200 cursor-pointer focus:outline-none"
+            className="relative px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-full border transition-colors duration-300 cursor-pointer focus:outline-none select-none overflow-hidden"
             style={{
-              borderColor: isActive ? "#FF581A" : "#EBE6DD",
+              borderColor: isActive ? "transparent" : "#EBE6DD",
               color: isActive ? "#FFFFFF" : "#111111",
-              backgroundColor: isActive ? "#FF581A" : "#FFFFFF",
+              backgroundColor: isActive ? "transparent" : "#ECE9E2",
             }}
           >
             {/* Smooth transition indicator using layoutId */}
             {isActive && (
               <motion.div
                 layoutId="activeTechTab"
-                className="absolute inset-0 bg-[#FF581A] rounded-full -z-10"
-                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                className="absolute inset-0 bg-[#FF581A]"
+                style={{ zIndex: 0 }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
               />
             )}
             <span className="relative z-10">{category}</span>

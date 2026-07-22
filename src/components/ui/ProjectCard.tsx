@@ -16,7 +16,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="group bg-white rounded-2xl border border-[#EBE6DD] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+      className="group bg-white rounded-2xl border border-[#EBE6DD] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full"
       style={{ transformStyle: "preserve-3d" }}
     >
       {/* Aspect Ratio 16:9 Image container */}
