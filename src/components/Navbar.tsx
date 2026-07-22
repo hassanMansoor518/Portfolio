@@ -30,6 +30,35 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -79% 0px", // Triggers when a section crosses the upper part of the viewport
+      threshold: 0,
+    };
+
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const matchingLink = navLinks.find(link => link.href === `#${id}`);
+          if (matchingLink) {
+            setActiveTab(matchingLink.name);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    navLinks.forEach((link) => {
+      const section = document.getElementById(link.href.substring(1));
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -86,8 +115,8 @@ export function Navbar() {
           <motion.a
             ref={cvBtnRef}
             {...cvBtnProps}
-            href="/cv.pdf"
-            download
+            href="/Muhammad_Hassan.pdf"
+            download="Muhammad_Hassan.pdf"
             className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111111] text-[#F7F3EC] text-xs uppercase font-semibold tracking-wider overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#D9A520] to-[#b38515] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />

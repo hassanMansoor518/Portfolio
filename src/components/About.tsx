@@ -13,11 +13,11 @@ import { useMagnetic } from "@/hooks/useMagnetic";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-    { icon: Briefcase, value: "10+", label: "Years Experience" },
-    { icon: Globe, value: "64+", label: "Completed Projects" },
-    { icon: CheckCircle2, value: "151+", label: "Happy Projects" },
-    { icon: ThumbsUp, value: "151+", label: "Client Satisfaction" },
-    { icon: Award, value: "98%", label: "Client Satisfaction" },
+    { icon: Briefcase, value: "MERN", label: "Stack Developer" },
+    { icon: Globe, value: "3+", label: "Production Apps" },
+    { icon: CheckCircle2, value: "15+", label: "REST APIs Built" },
+    { icon: ThumbsUp, value: "24/7", label: "Learning & Coding" },
+    { icon: Award, value: "2025", label: "BanoQabil Certified" },
 ];
 function About() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -91,7 +91,7 @@ function About() {
                         transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                         className="max-w-2xl text-xs sm:text-sm text-neutral-400 font-normal leading-relaxed mb-14"
                     >
-                        With a passion for intuitive design and a keen eye for detail, I transform unique ideas into beautiful, functional, and user-centered digital products.
+                        MERN Stack Developer with hands-on experience building and shipping production-ready web apps, including a multi-tenant AI SaaS platform, a collaborative dev-tools product, and a live food delivery app. Currently pursuing a BS in Software Engineering at Sindh Madressatul Islam University.
                     </motion.p>
 
                     {/* 5-Column Interactive Statistics Bar */}

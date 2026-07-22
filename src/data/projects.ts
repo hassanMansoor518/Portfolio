@@ -1,10 +1,11 @@
-export type ProjectCategory = "All" | "AI" | "Web Apps" | "SaaS" | "Dashboard" | "E-Commerce";
+export type ProjectCategory = "All" | "SaaS" | "Full Stack" | "Web Apps";
 
 export interface Project {
   id: string;
   title: string;
   category: ProjectCategory;
   description: string;
+  features?: string[];
   image: string;
   stack: string[];
   liveUrl: string;
@@ -13,45 +14,56 @@ export interface Project {
 
 export const projectCategories: ProjectCategory[] = [
   "All",
-  "AI",
-  "Web Apps",
   "SaaS",
-  "Dashboard",
-  "E-Commerce",
+  "Full Stack",
+  "Web Apps",
 ];
 
 export const projects: Project[] = [
   {
-    id: "ai-chatbot-saas",
-    title: "AI Chatbot SaaS",
-    category: "AI",
-    description:
-      "AI chatbot platform with authentication, subscriptions, analytics, usage tracking, and embeddable widgets.",
-    image: "/projects/chatbot.png",
-    stack: ["Next.js", "TypeScript", "MongoDB", "Stripe", "Socket.io"],
+    id: "devcollab",
+    title: "DevCollab",
+    category: "Full Stack",
+    description: "AI-Powered Collaborative Development Platform enabling teams to manage projects, track commits, and communicate in real time.",
+    features: [
+      "GitHub OAuth integration for commit-timeline visualization",
+      "AI-powered code analysis with one-click Quick Fix refactoring",
+      "Real-time workspace chat with AI-assisted messaging",
+      "WebRTC audio/video calls for team collaboration",
+    ],
+    image: "/projects/project1.png", // Keeping dummy image path for now, user can replace later
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/hassanMansoor518/DevCollab",
   },
   {
-    id: "ecommerce-store",
-    title: "E-Commerce Store",
-    category: "E-Commerce",
-    description:
-      "Full-stack ecommerce platform with authentication, payments, shopping cart, admin dashboard, and order management.",
-    image: "/projects/ecommerce.png",
-    stack: ["Next.js", "Node.js", "MongoDB", "Stripe", "Cloudinary"],
+    id: "supportpilot",
+    title: "SupportPilot",
+    category: "SaaS",
+    description: "AI-Powered Customer Support SaaS Platform letting businesses configure and embed AI chat widgets via a single script tag.",
+    features: [
+      "Lightweight, dependency-free vanilla JS embeddable chat widget",
+      "Chatbot playground for prompt testing and conversational context management",
+      "Billing module for subscription plan management via usage tracking",
+    ],
+    image: "/projects/project2.png",
+    stack: ["Next.js 15", "MongoDB", "NextAuth.js", "Google Gemini API"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/hassanMansoor518/supportpilot",
   },
   {
-    id: "task-management-app",
-    title: "Task Management App",
-    category: "Dashboard",
-    description:
-      "Collaborative task management application with real-time updates, Kanban boards, teams, notifications, and advanced filtering.",
-    image: "/projects/taskmanager.png",
-    stack: ["React", "Node.js", "Socket.io", "Tailwind CSS", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#",
+    id: "food-delivery",
+    title: "Reel-Style Food Delivery App",
+    category: "Web Apps",
+    description: "A scalable MERN food delivery platform with vertical reel-scroll (TikTok-style) UI with infinite scrolling.",
+    features: [
+      "15+ REST API endpoints for user, restaurant, and admin roles",
+      "JWT-based authentication and secure session management",
+      "Vertical reel-scroll UI with infinite scrolling responsive food cards",
+    ],
+    image: "/projects/project3.png",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT"],
+    liveUrl: "https://reel-style-food-delivery-cmeg.vercel.app/user/login",
+    githubUrl: "https://github.com/hassanMansoor518/Reel-Style-Food-Delivery-",
   },
 ];
