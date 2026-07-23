@@ -22,7 +22,7 @@ const cards = [
     icon: Atom,
     techIcon: Server,
     techName: "Node.js",
-    position: "top-[58%] left-[2%] md:left-[5%] lg:left-[7%]",
+    position: "top-[55%] left-[2%] md:left-[5%] lg:left-[4%]",
     floatDelay: 1.5,
   },
   {

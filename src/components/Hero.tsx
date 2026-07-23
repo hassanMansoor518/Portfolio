@@ -26,6 +26,7 @@ export function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
+    const foregroundTextRef = useRef<HTMLDivElement>(null);
 
     const { ref: btnRef, magneticProps: btnProps } = useMagnetic<HTMLAnchorElement>(0.25);
 
@@ -35,7 +36,7 @@ export function Hero() {
         const ctx = gsap.context(() => {
             // Smooth scroll parallax on text only
             if (textRef.current) {
-                gsap.to(textRef.current, {
+                gsap.to([textRef.current, foregroundTextRef.current], {
                     y: -25,
                     opacity: 0.7,
                     scrollTrigger: {
@@ -86,21 +87,28 @@ export function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* FIRST LINE: "I'M FULL STACK" (Solid text - placed behind developer image) */}
+                    {/* BACKGROUND TEXT (Solid - placed behind developer image) */}
                     <div ref={textRef} className="absolute inset-0 flex flex-col justify-center items-center select-none z-5 pointer-events-none">
                         <motion.h1
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                            className="pb-10 font-syne font-black text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-tight uppercase leading-none text-[#111111] whitespace-nowrap drop-shadow-sm -mb-8 sm:-mb-12 md:-mb-16"
+                            className="font-syne font-black text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-tight uppercase leading-none text-[#111111] whitespace-nowrap drop-shadow-sm mb-10"
                         >
                             I&apos;M FULL STACK
                         </motion.h1>
 
-                        <div className="h-20 sm:h-28 md:h-36" />
+                        <motion.h1
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                            className="font-syne font-black text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-tight uppercase leading-none text-[#111111] whitespace-nowrap"
+                        >
+                            DEVELOPER
+                        </motion.h1>
                     </div>
 
-                    {/* CENTERED DEVELOPER PROFILE IMAGE (STATIONARY - NO UPWARD MOVEMENT ON HOVER OR MOUSE MOVE) */}
+                    {/* CENTERED DEVELOPER PROFILE IMAGE (STATIONARY) */}
                     <motion.div
                         ref={imageRef}
                         initial={{ opacity: 0, y: 40 }}
@@ -120,15 +128,24 @@ export function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* SECOND LINE: "DEVELOPER" (Outlined stroke text) */}
-                    <div className="absolute inset-0 flex flex-col justify-center items-center select-none z-20 pointer-events-none">
-                        <div className="h-16 sm:h-24 md:h-32" />
+                    {/* FOREGROUND TEXT (Outlined - placed in front of developer image) */}
+                    <div ref={foregroundTextRef} className="absolute inset-0 flex flex-col justify-center items-center select-none z-20 pointer-events-none">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                            className="font-syne font-black text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-tight uppercase leading-none text-transparent whitespace-nowrap mb-10"
+                        >
+                            I&apos;M FULL STACK
+                        </motion.h1>
+
+
 
                         <motion.h1
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                            className="pt-15 font-syne font-black text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-tight uppercase leading-none text-outline  whitespace-nowrap"
+                            className="font-syne font-black text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-tight uppercase leading-none text-transparent [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white] whitespace-nowrap"
                         >
                             DEVELOPER
                         </motion.h1>
@@ -138,6 +155,10 @@ export function Hero() {
 
             </div>
 
+            {/* Absolute positioning overlays */}
+            <div className="absolute left-3 md:left-7 top-[68%] -translate-y-1/2 z-30 hidden xl:block">
+                <SocialLinks className="flex-col gap-3" />
+            </div>
 
         </section>
     );

@@ -27,29 +27,29 @@ const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const socialLinks = [
-  { 
-    name: "Github", 
-    href: "https://github.com/hassanMansoor518", 
+  {
+    name: "Github",
+    href: "https://github.com/hassanMansoor518",
     icon: GithubIcon,
-    color: "hover:bg-[#333333] hover:text-white hover:border-[#333333] hover:shadow-[0_0_15px_rgba(51,51,51,0.5)]" 
+    color: "hover:bg-[#333333] hover:text-white hover:border-[#333333] hover:shadow-[0_0_15px_rgba(51,51,51,0.5)]"
   },
-  { 
-    name: "LinkedIn", 
-    href: "https://linkedin.com/in/muhammad-hassan-996b13359", 
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/muhammad-hassan-996b13359",
     icon: LinkedinIcon,
-    color: "hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:shadow-[0_0_15px_rgba(0,119,181,0.5)]" 
+    color: "hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:shadow-[0_0_15px_rgba(0,119,181,0.5)]"
   },
-  { 
-    name: "Twitter", 
-    href: "https://twitter.com", 
+  {
+    name: "Twitter",
+    href: "https://twitter.com",
     icon: TwitterIcon,
-    color: "hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] hover:shadow-[0_0_15px_rgba(29,161,242,0.5)]" 
+    color: "hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] hover:shadow-[0_0_15px_rgba(29,161,242,0.5)]"
   },
-  { 
-    name: "Email", 
-    href: "https://mail.google.com/mail/?view=cm&fs=1&to=hassanmansoor518@gmail.com", 
+  {
+    name: "Email",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=hassanmansoor518@gmail.com",
     icon: Mail,
-    color: "hover:bg-[#D9A520] hover:text-[#111111] hover:border-[#D9A520] hover:shadow-[0_0_15px_rgba(217,165,32,0.5)]" 
+    color: "hover:bg-[#D9A520] hover:text-[#111111] hover:border-[#D9A520] hover:shadow-[0_0_15px_rgba(217,165,32,0.5)]"
   },
 ];
 
@@ -71,7 +71,7 @@ function SocialItem({ item, index }: { item: (typeof socialLinks)[0]; index: num
       className={`relative group flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 transition-all duration-300 shadow-sm ${item.color}`}
     >
       <Icon className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
-      
+
       {/* Attractive Tooltip */}
       <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-[#111111] border border-neutral-800 text-neutral-200 text-[10px] font-medium tracking-wider uppercase rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-lg group-hover:-translate-y-1 z-10">
         {item.name}
@@ -82,9 +82,9 @@ function SocialItem({ item, index }: { item: (typeof socialLinks)[0]; index: num
   );
 }
 
-export function SocialLinks() {
+export function SocialLinks({ className = "" }: { className?: string }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className={`flex items-center gap-3 ${className}`}>
       {socialLinks.map((item, index) => (
         <SocialItem key={item.name} item={item} index={index} />
       ))}
