@@ -25,6 +25,34 @@
   color: transparent;
 }
 
+/* ── Webkit Autofill Override Fix (Prevents Light Blue Chrome Autofill Box) ── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #F7F3EC inset !important;
+  -webkit-text-fill-color: #111111 !important;
+  caret-color: #111111 !important;
+  border-color: #EBE6DD !important;
+  transition: background-color 50000s ease-in-out 0s !important;
+}
+
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #111111 !important;
+  border-color: #FF581A !important;
+}
+
+/* Restore native text cursor inside form inputs & textareas */
+input, textarea, select {
+  cursor: text !important;
+}
+
 /* Custom Lenis Smooth Scroll styles */
 html.lenis,
 html.lenis body {

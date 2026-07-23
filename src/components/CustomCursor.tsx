@@ -96,10 +96,19 @@ export function CustomCursor() {
     };
   }, [mouseX, mouseY, visible, isHover, isClick, isText]);
 
+  const cursorOpacity = useTransform(
+    [visible, isText],
+    ([v, t]) => (t ? 0 : v)
+  );
+
   return (
     <>
-      {/* Hide native cursor */}
-      <style>{`* { cursor: none !important; }`}</style>
+      {/* Hide native cursor globally except inside inputs and textareas */}
+      <style>{`
+        * { cursor: none !important; }
+        input, textarea, select, [contenteditable="true"] { cursor: text !important; }
+        button, a, [role="button"] { cursor: pointer !important; }
+      `}</style>
 
       {/* ── Outer ring (spring trail) ─────────────────────────── */}
       <motion.div
@@ -114,7 +123,7 @@ export function CustomCursor() {
           scale:       ringScale,
           borderColor: ringBorder,
           backgroundColor: ringBg,
-          opacity: visible,
+          opacity: cursorOpacity,
           willChange: "transform",
         }}
       />
@@ -131,7 +140,7 @@ export function CustomCursor() {
           height: dotH,
           scale:  dotScale,
           backgroundColor: dotColor,
-          opacity: visible,
+          opacity: cursorOpacity,
           willChange: "transform",
           borderRadius: useTransform(isText, [0, 1], ["50%", "2px"]),
         }}
