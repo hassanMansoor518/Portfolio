@@ -33,7 +33,7 @@ export const projects: Project[] = [
     ],
     image: "/projects/project1.png", // Keeping dummy image path for now, user can replace later
     stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    liveUrl: "#",
+    liveUrl: "https://dev-collab-quzpx6aqi-hassanmansoor518-gmailcoms-projects.vercel.app",
     githubUrl: "https://github.com/hassanMansoor518/DevCollab",
   },
   {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     ],
     image: "/projects/project2.png",
     stack: ["Next.js 15", "MongoDB", "NextAuth.js", "Google Gemini API"],
-    liveUrl: "#",
+    liveUrl: "https://supportpilot-lilac.vercel.app",
     githubUrl: "https://github.com/hassanMansoor518/supportpilot",
   },
   {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     ],
     image: "/projects/project3.png",
     stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT"],
-    liveUrl: "https://reel-style-food-delivery-cmeg.vercel.app/user/login",
+    liveUrl: "https://reel-style-food-delivery-cmeg.vercel.app",
     githubUrl: "https://github.com/hassanMansoor518/Reel-Style-Food-Delivery-",
   },
 ];
